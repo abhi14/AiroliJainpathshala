@@ -1,0 +1,142 @@
+<div class="home-page">
+
+<div class="row" style="background-color:#7a84c7">
+  
+  <div align="center" class="col-md-3 col-md-offset-1">
+    
+      <input type="text"   
+      [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" 
+      placeholder="Search by Title..." (keyup)="searchByName()">
+    
+        <span class="input-group-text" style="padding-top:10%"><mat-icon>search</mat-icon>
+          </span>
+    
+</div>
+  <div  align="center"  class="col-md-6 filter-by-age">
+    <div class="row">
+      <div style="padding-top: 15px" class="col-md-auto title">
+        <span>Filter by no of students:</span>
+      </div>
+      <div class="col">
+        <span>0 </span>
+        <mat-slider
+          class="age-slider"
+          max="100"
+          min="0"
+          step="1"
+          thumbLabel="true"
+          (ngModel)="ageValue"
+          (change)="rangeChange($event)">
+        </mat-slider>
+        <span> 100</span>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+ <!-- Kalyanak Display -->
+ <mat-accordion>
+  <div *ngFor="let item of object | keyvalue" class="list-group-item list-group-item-action flex-column align-items-start">
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>            
+            <div class="row">
+              <div class="col col-md-12 text-col">
+                <h4 class="mb-1"><b>{{item.key}} भगवान के कल्याणक :</b></h4>                                 
+           </div>
+           </div>                    
+    </mat-panel-title>
+    <!-- <mat-panel-description>
+      click here to view 
+      <mat-icon>arrow_downward</mat-icon>
+    </mat-panel-description> -->
+  </mat-expansion-panel-header> 
+  
+  <div  *ngFor="let item1 of item.value | keyvalue">    
+      <mat-divider></mat-divider>        
+      <h5 class="mb-1"><b>{{item1.value}} कल्याणक</b></h5>
+      <mat-divider></mat-divider>
+      </div>
+    
+   
+</mat-expansion-panel>   </div>
+</mat-accordion>
+
+
+<div class="list-group users-list">
+  <div *ngFor="let item of items;let i=index " class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="row">
+      <div class="col col-md-2 image-col">
+        <img class="image" [src]="item.payload.doc.data().avatar">
+      </div>
+      <div class="col col-md-8 text-col">
+        <h3 class="mb-1"><b>{{item.payload.doc.data().name}}</b></h3>
+
+      <h4><small>No of students:<strong> {{item.payload.doc.data().age}}</strong></small></h4>
+        <h4><small>Total Comments:<strong> {{countdata[i]}}</strong></small></h4>
+            
+        
+      
+      </div>
+
+      <div class="col col-md-2 actions-col">
+        <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
+          <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
+        </button>
+      </div>    
+    </div>
+  </div>
+  
+  
+ 
+</div>
+
+
+<!-- 
+<div class="list-group users-list">
+  <div *ngFor="let item of kalyanak" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="row">
+      <div class="col col-md-8 text-col">
+        <h3 class="mb-1"><b>{{item.key}}</b></h3>
+    
+
+       
+      </div>
+      </div>
+      </div>
+    </div> -->
+<!-- 
+    <div>
+       
+       <div *ngFor="let b of bhagwan | keyvalue"> 
+          <div *ngFor="let p of persons | keyvalue">
+       <p>{{p.value.b}}</p> 
+        Key: <b>{{p.value.dharmnath}}</b> and Value: <b>{{p.value.b}}</b>
+       </div>
+      </div>
+    </div>  -->
+
+
+
+
+<!-- 
+<div class="list-group users-list">
+  <div *ngFor="let item of object | keyvalue" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="row">
+      <div class="col col-md-8 text-col">
+        <h5 class="mb-1"><b>{{item.key}}</b></h5>
+
+        <div *ngFor="let item1 of item.value | keyvalue" class="list-group-item list-group-item-action flex-column align-items-start">
+
+        <h5 class="mb-1"><b>{{item1.value}}</b></h5>
+        </div>
+   </div>
+   </div>
+   </div>
+   </div> -->
+
+
+  </div>
+
+

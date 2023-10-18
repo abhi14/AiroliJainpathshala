@@ -1,0 +1,14 @@
+
+<ngx-extended-pdf-viewer [src]="pdfLink"   backgroundColor="#e8e8ef"
+[mobileFriendlyZoom]="mobileFriendlyZoom"
+[showZoomButtons]="true"
+[showSidebarButton]="showSidebar"
+[useBrowserLocale]="true"
+[showSidebarOnLoad]="true"
+[(zoom)]="zoom"
+[showPresentationModeButton]="true"
+[height]="height"
+[handTool]="handTool"
+[(page)]="page"
+[filenameForDownload]="filenameForDownload"  delayFirstView="5000" (pagesLoaded)="onPagesLoaded($event)">
+ </ngx-extended-pdf-viewer>

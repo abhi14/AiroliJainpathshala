@@ -1,0 +1,27 @@
+<div class="niyam-page">
+<div>
+  <ngx-mobile-wheel
+    centerText="नियम चक्र"
+    [spinOnce]="spinOnce"
+    fontColor="white"
+    stroke="DimGrey"
+    arrowColor="white"
+    [spinRange]="[10,5]"
+    (beforeSpin)="beforeSpinFn()"
+    (afterSpin)="afterSpinFn()"
+    [prizeToWin]="niyam"
+    [prize_descriptions]="prizes"
+    [colors]="colors">
+  </ngx-mobile-wheel>
+</div>
+
+
+<br>
+<br>
+<div *ngIf="count > 0">
+<div class="panel panel-primary">
+  <div class="panel-heading p">आज का नियम :</div>        
+  <div class="p"><B>{{dailyniyam}}</B></div>
+</div>
+</div>
+

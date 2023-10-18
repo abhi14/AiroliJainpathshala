@@ -1,0 +1,29 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<mat-toolbar  color="primary">
+		<mat-toolbar-row>		
+				
+				
+<button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+		   color="black">	
+		   <mat-icon>list</mat-icon>	   
+		   
+		  </button>	
+		  <span>Airoli Pathshala</span>
+		  </mat-toolbar-row>		
+	  </mat-toolbar>
+
+	  <mat-sidenav-container color="primary" class="example-container">
+  
+		<mat-sidenav #drawer style="background-color:#7a84c7" mode="side"  role="navigation">
+		  <mat-nav-list>
+			<a mat-list-item routerLink='home'> <mat-icon>home</mat-icon></a>
+			<a mat-list-item routerLink='new-user'><mat-icon>add_circle</mat-icon></a>
+			<a mat-list-item routerLink='comics'><mat-icon>theaters</mat-icon></a>
+			<a mat-list-item routerLink='niyam-chakra'><mat-icon>loop</mat-icon></a>
+		  </mat-nav-list>
+		</mat-sidenav>
+		<mat-sidenav-content>
+		  <router-outlet></router-outlet>
+		</mat-sidenav-content>
+	  </mat-sidenav-container>

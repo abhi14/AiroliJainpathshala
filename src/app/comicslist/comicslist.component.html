@@ -1,0 +1,20 @@
+<div class="list-group users-list">
+  <div *ngFor="let item of comics" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="row">
+      <div class="col col-md-8 text-col">
+        <h3 class="mb-1"><b>{{item.payload.doc.data().Name}}</b></h3>
+
+       
+      </div>
+
+      <div class="col col-md-2 actions-col">
+        <button class="btn btn-outline-primary action" (click)="viewNumber(item)" type="button">
+          <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
+        </button>
+      </div>    
+    </div>
+  </div>
+  
+  
+ 
+</div>

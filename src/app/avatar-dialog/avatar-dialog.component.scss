@@ -1,0 +1,13 @@
+.img-thumbnail {
+  width: 100px;
+  height: 100px;
+  margin: 4px;
+}
+.main {
+  display: flex;
+ flex-wrap: wrap;
+}
+
+.d-flex{display:-ms-flexbox!important;display:flex!important}
+.align-content-center{-ms-flex-line-pack:center!important;align-content:center!important}
+
